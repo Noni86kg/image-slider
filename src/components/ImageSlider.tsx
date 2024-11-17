@@ -48,8 +48,7 @@ const ImageSlider = ({ data, parentWidth }: { data: ImageInfo[], parentWidth: nu
   }, [goToNext]);
 
   // Handles drag-stop events, determining whether to change slides based on drag distance.
-  const handleStop = (e: any, position: { x: number }) => {
-    e
+  const handleStop = (_e: any, position: { x: number }) => {
     const { x } = position;
     const dragToX = x + (parentWidth * currentIndex); // Calculate the total drag distance relative to the current slide.
     const changeImg = Math.abs(dragToX) > (parentWidth / 2); // Change slide if dragged more than half the parent width.
